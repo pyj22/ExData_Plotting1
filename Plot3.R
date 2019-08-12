@@ -6,6 +6,7 @@ data <- subset(rawdata, subset = (Date >= "2007-02-01" & Date <= "2007-02-02"))
 rm(rawdata)
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
+
 png(file="Plot3.png")
 plot(data$Global_active_power ~ data$Datetime, type = "l",
      ylab = "Global Active Power (kilowatts)", xlab = "")

@@ -6,6 +6,7 @@ data <- subset(rawdata, subset = (Date >= "2007-02-01" & Date <= "2007-02-02"))
 rm(rawdata)
 datetime <- paste(as.Date(data$Date), data$Time)
 data$Datetime <- as.POSIXct(datetime)
+
 png(file="Plot3.png")
 par(mfrow = c(2,2), mar = c(4,4,2,1), oma = c(0,0,2,0))
 with(data, {
